@@ -10,7 +10,7 @@ class Prestamo {
 private:
     Libro* libroPrestado;      // Apunta al libro que se presta
     Usuario* usuario;          // Apunta al usuario que lo solicita
-    std::string fechaPrestamo; // Ejemplo: "2025-07-04"
+    std::string fechaPrestamo; 
 
 public:
     // Constructor

@@ -13,9 +13,9 @@ std::string Prestamo::getFechaPrestamo() const { return fechaPrestamo; }
 
 // Muestra info
 void Prestamo::mostrarInformacion() const {
-    std::cout << "?? Libro prestado:\n";
+    std::cout << " Libro prestado:\n";
     libroPrestado->mostrarInformacion();
-    std::cout << "?? Usuario:\n";
+    std::cout << " Usuario:\n";
     usuario->mostrarInformacion();
-    std::cout << "?? Fecha de préstamo: " << fechaPrestamo << "\n";
+    std::cout << " Fecha de préstamo: " << fechaPrestamo << "\n";
 }

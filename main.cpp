@@ -48,7 +48,7 @@ int main() {
                 cin.ignore();
 
                 biblioteca.agregarLibro(new Libro(titulo, autor, isbn, anio, copias));
-                cout << "? Libro registrado.\n";
+                cout << " Libro registrado.\n";
                 break;
             }
 
@@ -61,7 +61,7 @@ int main() {
                 getline(cin, correo);
 
                 biblioteca.agregarUsuario(new Usuario(titulo, id, correo));
-                cout << "? Usuario registrado.\n";
+                cout << " Usuario registrado.\n";
                 break;
             }
 
@@ -98,11 +98,11 @@ int main() {
 
             case 0:
             	biblioteca.guardarDatos();
-                cout << "?? Saliendo del sistema. ¡Hasta luego!\n";
+                cout << " Saliendo del sistema. ¡Hasta luego!\n";
                 break;
 
             default:
-                cout << "? Opción no válida.\n";
+                cout << " Opción no válida.\n";
         }
 
     } while (opcion != 0);

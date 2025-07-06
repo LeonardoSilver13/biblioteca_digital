@@ -45,9 +45,9 @@ void Biblioteca::registrarPrestamo(const std::string& isbn, const std::string& i
     if (libro && usuario && libro->getCopiasDisponibles() > 0) {
         libro->prestar();
         prestamos.push_back(new Prestamo(libro, usuario, fecha));
-        std::cout << "? Préstamo registrado correctamente.\n";
+        std::cout << " Préstamo registrado correctamente.\n";
     } else {
-        std::cout << "? No se puede realizar el préstamo. Verifique disponibilidad o existencia.\n";
+        std::cout << " No se puede realizar el préstamo. Verifique disponibilidad o existencia.\n";
     }
 }
 
@@ -56,27 +56,27 @@ void Biblioteca::devolverLibro(const std::string& isbn) {
     Libro* libro = buscarLibroPorISBN(isbn);
     if (libro) {
         libro->devolver();
-        std::cout << "? Libro devuelto correctamente.\n";
+        std::cout << " Libro devuelto correctamente.\n";
     } else {
-        std::cout << "? No se encontró el libro.\n";
+        std::cout << " No se encontró el libro.\n";
     }
 }
 
 // Mostrar
 void Biblioteca::mostrarLibros() const {
-    std::cout << "?? Lista de libros:\n";
+    std::cout << " Lista de libros:\n";
     for (Libro* l : libros)
         l->mostrarInformacion();
 }
 
 void Biblioteca::mostrarUsuarios() const {
-    std::cout << "?? Lista de usuarios:\n";
+    std::cout << " Lista de usuarios:\n";
     for (Usuario* u : usuarios)
         u->mostrarInformacion();
 }
 
 void Biblioteca::mostrarPrestamos() const {
-    std::cout << "?? Lista de préstamos:\n";
+    std::cout << " Lista de préstamos:\n";
     for (Prestamo* p : prestamos)
         p->mostrarInformacion();
 }
@@ -92,7 +92,7 @@ void Biblioteca::guardarDatos() {
     }
 
     archivoLibros.close();
-    std::cout << "? Libros guardados en libros.txt\n";
+    std::cout << " Libros guardados en libros.txt\n";
 }
 
 //Cargar
@@ -124,5 +124,5 @@ void Biblioteca::cargarDatos() {
     }
 
     archivoLibros.close();
-    std::cout << "?? Libros cargados desde libros.txt\n";
+    std::cout << " Libros cargados desde libros.txt\n";
 }
