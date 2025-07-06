@@ -11,7 +11,7 @@ Libro* Prestamo::getLibro() const { return libroPrestado; }
 Usuario* Prestamo::getUsuario() const { return usuario; }
 std::string Prestamo::getFechaPrestamo() const { return fechaPrestamo; }
 
-// Mostrar información
+// Muestra info
 void Prestamo::mostrarInformacion() const {
     std::cout << "?? Libro prestado:\n";
     libroPrestado->mostrarInformacion();

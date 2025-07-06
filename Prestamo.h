@@ -21,7 +21,7 @@ public:
     Usuario* getUsuario() const;
     std::string getFechaPrestamo() const;
 
-    // Mostrar información del préstamo
+    // Muestra info del préstamo
     void mostrarInformacion() const;
 };
 

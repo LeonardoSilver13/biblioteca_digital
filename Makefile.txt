@@ -1,0 +1,14 @@
+# Makefile para compilar el sistema de biblioteca digital
+
+TARGET = biblioteca
+SRC = main.cpp Libro.cpp Usuario.cpp Prestamo.cpp Biblioteca.cpp
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+clean:
+	del *.o $(TARGET).exe 2>nul || true

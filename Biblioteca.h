@@ -31,7 +31,7 @@ public:
     void registrarPrestamo(const std::string& isbn, const std::string& idUsuario, const std::string& fecha);
     void devolverLibro(const std::string& isbn);
 
-    // Mostrar
+    // Muestra
     void mostrarLibros() const;
     void mostrarUsuarios() const;
     void mostrarPrestamos() const;

@@ -26,7 +26,7 @@ void Libro::devolver() {
     if (copiasDisponibles < copiasTotales)
         copiasDisponibles++;
 }
-
+//Muestra info
 void Libro::mostrarInformacion() const {
     cout << "Título: " << titulo << "\n"
          << "Autor: " << autor << "\n"

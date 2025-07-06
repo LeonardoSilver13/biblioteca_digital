@@ -29,7 +29,7 @@ public:
     void prestar();
     void devolver();
 
-    // Mostrar información
+    // Muestra info
     void mostrarInformacion() const;
 };
 

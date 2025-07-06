@@ -19,7 +19,7 @@ public:
     std::string getID() const;
     std::string getCorreo() const;
 
-    // Mostrar información
+    //Muestra info
     void mostrarInformacion() const;
 };
 

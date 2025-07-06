@@ -11,7 +11,7 @@ std::string Usuario::getNombre() const { return nombre; }
 std::string Usuario::getID() const { return id; }
 std::string Usuario::getCorreo() const { return correo; }
 
-// Mostrar información
+//Muestra info
 void Usuario::mostrarInformacion() const {
     std::cout << "Nombre: " << nombre << "\n"
               << "ID: " << id << "\n"

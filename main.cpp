@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "Biblioteca.h"
+#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +23,7 @@ void mostrarMenu() {
 
 int main() {
     Biblioteca biblioteca;
+    biblioteca.cargarDatos();
     int opcion;
     string titulo, autor, isbn, id, correo, fecha;
     int anio, copias;
@@ -94,6 +97,7 @@ int main() {
                 break;
 
             case 0:
+            	biblioteca.guardarDatos();
                 cout << "?? Saliendo del sistema. ¡Hasta luego!\n";
                 break;
 

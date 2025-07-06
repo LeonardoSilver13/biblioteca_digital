@@ -2,6 +2,7 @@
 #include "Biblioteca.h"
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 // Constructor
 Biblioteca::Biblioteca() {}
@@ -80,11 +81,48 @@ void Biblioteca::mostrarPrestamos() const {
         p->mostrarInformacion();
 }
 
-// Archivo (implementaremos luego)
-void Biblioteca::cargarDatos() {
-    // Pendiente de implementar
+// Guardar 
+void Biblioteca::guardarDatos() {
+    std::ofstream archivoLibros("libros.txt");
+
+    for (Libro* l : libros) {
+        archivoLibros << l->getTitulo() << "," << l->getAutor() << "," << l->getISBN()
+                      << "," << l->getAnio() << "," << l->getCopiasTotales() << ","
+                      << l->getCopiasDisponibles() << "\n";
+    }
+
+    archivoLibros.close();
+    std::cout << "? Libros guardados en libros.txt\n";
 }
 
-void Biblioteca::guardarDatos() {
-    // Pendiente de implementar
+//Cargar
+void Biblioteca::cargarDatos() {
+    std::ifstream archivoLibros("libros.txt");
+    std::string linea;
+
+    while (getline(archivoLibros, linea)) {
+        std::stringstream ss(linea);
+        std::string titulo, autor, isbn, anioStr, copiasTotalesStr, copiasDisponiblesStr;
+
+        getline(ss, titulo, ',');
+        getline(ss, autor, ',');
+        getline(ss, isbn, ',');
+        getline(ss, anioStr, ',');
+        getline(ss, copiasTotalesStr, ',');
+        getline(ss, copiasDisponiblesStr, ',');
+
+        int anio = std::stoi(anioStr);
+        int copiasTotales = std::stoi(copiasTotalesStr);
+        int copiasDisponibles = std::stoi(copiasDisponiblesStr);
+
+        Libro* libro = new Libro(titulo, autor, isbn, anio, copiasTotales);
+        for (int i = 0; i < (copiasTotales - copiasDisponibles); ++i) {
+            libro->prestar();
+        }
+
+        agregarLibro(libro);
+    }
+
+    archivoLibros.close();
+    std::cout << "?? Libros cargados desde libros.txt\n";
 }
